@@ -1,21 +1,14 @@
 import React, { Fragment } from 'react'
+import Pages from '../../pages/Pages'
 import Navbar from '../Navbar/Navbar'
+import SideNav from '../SideNav/SideNav'
 import TwoFrames from '../TwoFrames/TwoFrames'
 
 const MainLayout = () => {
   return (
     <Fragment>
       <Navbar />
-      <TwoFrames
-        Left={() => <p>Left</p>}
-        leftProps={{}}
-        Middle={() => (
-          <div>
-            <p>Middle</p>
-          </div>
-        )}
-        middleProps={{}}
-      />
+      <TwoFrames Left={SideNav} leftProps={{}} Middle={Pages} middleProps={{}} />
     </Fragment>
   )
 }
