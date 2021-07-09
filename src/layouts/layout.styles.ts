@@ -39,6 +39,7 @@ export const LeftFrameContainer = styled.div<{
   position: relative;
   left: ${(props) => (props.isActive ? '0px' : `-${props.width}px`)};
   width: ${(props) => (props.isActive ? `${props.width}px` : '0px')};
+  min-width: ${(props) => (props.isActive ? `${props.width}px` : '0px')};
   transition: all ${SLIDE_IN_DURATION} ease-out;
 `
 

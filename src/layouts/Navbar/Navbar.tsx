@@ -7,10 +7,22 @@ import { NAVBAR_HEIGHT } from '../../utils/constants'
 
 const NavbarMain = styled.div`
   height: ${NAVBAR_HEIGHT}px;
-  background-color: #171717;
+  background-color: #1d2732;
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
+`
+const Logo = styled.p`
+  font-size: 20px;
+  margin-left: 1rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  user-select: none;
+  > span {
+    font-size: 18px;
+    font-weight: 400;
+  }
 `
 
 const Navbar = () => {
@@ -22,6 +34,9 @@ const Navbar = () => {
       ) : (
         <MenuIcon height={20} color='#fff' onClick={openLeftFrame} />
       )}
+      <Logo>
+        ORACLE <span>Cloud</span>
+      </Logo>
     </NavbarMain>
   )
 }
