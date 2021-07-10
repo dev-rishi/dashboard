@@ -5,28 +5,16 @@ import LayoutBody from '../../layouts/LayoutBody/LayoutBody'
 import LayoutHeader from '../../layouts/LayoutHeader/LayoutHeader'
 import { Grid, GridCol } from '../../utils/utility.styles'
 
-const Home = () => {
-  const { dashBoardHome } = useParams<IRouteParams>()
+const DashboardDetails = () => {
+  const { dashboardName } = useParams<IRouteParams>()
 
   return (
     <div>
-      <LayoutHeader />
+      <LayoutHeader title={dashboardName} />
       <LayoutBody>
         <Grid>
           <GridCol>
             <p>Autonomous Data</p>
-            <p>1</p>
-          </GridCol>
-          <GridCol>
-            <p>Autonomous Data Warehouse</p>
-            <p>1</p>
-          </GridCol>
-          <GridCol>
-            <p>Autonomous Data Warehouse</p>
-            <p>1</p>
-          </GridCol>
-          <GridCol>
-            <p>Autonomous Data </p>
             <p>1</p>
           </GridCol>
         </Grid>
@@ -35,4 +23,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default DashboardDetails

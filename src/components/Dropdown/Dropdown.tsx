@@ -19,6 +19,7 @@ const DropdownBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-transform: capitalize;
   &:hover,
   &:focus,
   &:active {
@@ -44,6 +45,7 @@ const DropdownItemContainer = styled.div`
     padding: 0.7rem 1rem;
     text-decoration: none;
     font-size: 14px;
+    text-transform: capitalize;
     &:hover,
     &.active {
       background: #364050;
@@ -95,6 +97,7 @@ const Dropdown = ({ title, list }: IDropdown) => {
               <NavLink
                 activeClassName='active'
                 to={item.id}
+                replace
                 key={idx}
                 onClick={() => setIsOpen(false)}
                 exact

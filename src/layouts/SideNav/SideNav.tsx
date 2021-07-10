@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import Dropdown from '../../components/Dropdown/Dropdown'
+import { rootData } from '../../data'
 import ChipIcon from '../../icons/ChipIcon'
 
 const SideNavOuterContainer = styled.div`
@@ -29,24 +30,23 @@ const SideNav = () => {
   return (
     <SideNavOuterContainer>
       <div>
-        <SideNavItemHeader>
-          <ChipIcon color='#7BA65C' height={20} />
-          <p>Core Infrastructure</p>
-        </SideNavItemHeader>
-        <Dropdown
-          title='Compute'
-          list={[
-            { label: 'Home', id: '/' },
-            { label: 'First', id: '/first' },
-          ]}
-        />
-        <Dropdown
-          title='Block Storage'
-          list={[
-            { label: 'Home', id: '/' },
-            { label: 'First', id: '/first' },
-          ]}
-        />
+        {Object.keys(rootData).map((rootKey: any, idx) => {
+          return (
+            <Fragment key={idx}>
+              <SideNavItemHeader>
+                <ChipIcon color='#7BA65C' height={20} />
+                <p>{rootKey}</p>
+              </SideNavItemHeader>
+              {Object.keys(rootData[rootKey]).map((key, keyIdx) => {
+                const dropdownList = Object.keys(rootData[rootKey][key]).map((key) => ({
+                  label: key,
+                  id: `/${rootKey}/${key}`,
+                }))
+                return <Dropdown key={keyIdx} title={key} list={dropdownList} />
+              })}
+            </Fragment>
+          )
+        })}
       </div>
     </SideNavOuterContainer>
   )

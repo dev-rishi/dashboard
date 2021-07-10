@@ -17,7 +17,9 @@ interface ILayoutHeader {
 const LayoutHeader = ({ title }: ILayoutHeader) => {
   return (
     <LayoutHeaderOuter>
-      <div>{title && <p>{title}</p>}</div>
+      <div style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#0f274c' }}>
+        {title && <p>{title}</p>}
+      </div>
     </LayoutHeaderOuter>
   )
 }

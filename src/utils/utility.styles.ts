@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const transitionStyles = (properties: string[] | string) => {
   if (typeof properties === 'string')
@@ -35,5 +35,26 @@ export const horizontalScrollStyles = css`
   }
   ::-webkit-scrollbar-thumb {
     background: ${(props) => props.theme.scrollBarThumbColor};
+  }
+`
+
+export const Grid = styled.div`
+  display: grid;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  grid-template-columns: auto auto auto;
+`
+
+export const GridCol = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid #a5a5a5;
+  background-color: #efefef;
+  &:hover {
+    box-shadow: rgb(0 0 0 / 25%) 0px 2px 5px 1px;
+    transition: all 0.2s ease-in;
   }
 `
