@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { IRouteParams } from '..'
 import { rootData } from '../../data'
 import LayoutBody from '../../layouts/LayoutBody/LayoutBody'
@@ -8,6 +8,7 @@ import { Title } from '../../utils/utility.styles'
 
 const DashboardDetails = () => {
   const { dashBoardHome, dashboardName, dashboardCategory } = useParams<IRouteParams>()
+  const { goBack } = useHistory()
   const data =
     dashboardName && dashboardCategory
       ? rootData[dashBoardHome][dashboardCategory][dashboardName]
@@ -16,7 +17,7 @@ const DashboardDetails = () => {
 
   return (
     <div>
-      <LayoutHeader title={dashboardName} />
+      <LayoutHeader title={dashboardName} backAction={goBack} />
       <LayoutBody>
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
           <div style={{ marginRight: '1rem' }}>{Icon && <Icon color='#7BA65C' height={25} />}</div>

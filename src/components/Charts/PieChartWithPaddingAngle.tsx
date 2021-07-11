@@ -12,7 +12,7 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042']
 export default class PieChartWithPaddingAngle extends PureComponent {
   render() {
     return (
-      <PieChart width={350} height={400}>
+      <PieChart width={250} height={400}>
         <Pie
           data={data}
           cx={120}

@@ -18,10 +18,10 @@ export const verticalScrollStyles = css`
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: ${(props) => props.theme.scrollBarTrackColor};
+    background: rgba(25, 25, 25, 0.2);
   }
   ::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.scrollBarThumbColor};
+    background: rgba(25, 25, 25, 0.3);
   }
 `
 
@@ -31,10 +31,10 @@ export const horizontalScrollStyles = css`
     height: 3px;
   }
   ::-webkit-scrollbar-track {
-    background: ${(props) => props.theme.scrollBarTrackColor};
+    background: rgba(25, 25, 25, 0.2);
   }
   ::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.scrollBarThumbColor};
+    background: rgba(25, 25, 25, 0.3);
   }
 `
 

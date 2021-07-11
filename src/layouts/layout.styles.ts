@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { NAVBAR_HEIGHT } from '../utils/constants'
-import { transitionStyles } from '../utils/utility.styles'
+import { horizontalScrollStyles, transitionStyles } from '../utils/utility.styles'
 
 const SLIDE_IN_DURATION = '0.3s'
 
@@ -12,6 +12,7 @@ export const LayoutRoot = styled.div<{ showBanner: boolean }>`
   right: 0;
   display: grid;
   grid-template-rows: ${NAVBAR_HEIGHT}px 1fr;
+  ${horizontalScrollStyles};
 `
 
 export const AppMain = styled.main`
@@ -28,6 +29,7 @@ export const AppContainer = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${horizontalScrollStyles};
 `
 
 export const LeftFrameContainer = styled.div<{

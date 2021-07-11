@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import Dropdown from '../../components/Dropdown/Dropdown'
 import { rootData } from '../../data'
@@ -16,6 +17,7 @@ const SideNavItemHeader = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
+  cursor: pointer;
 
   > p {
     font-size: 14px;
@@ -27,13 +29,15 @@ const SideNavItemHeader = styled.div`
 `
 
 const SideNav = () => {
+  const { push } = useHistory()
+
   return (
     <SideNavOuterContainer>
       <div>
         {Object.keys(rootData).map((rootKey: any, idx) => {
           return (
             <Fragment key={idx}>
-              <SideNavItemHeader>
+              <SideNavItemHeader onClick={() => push(`/${rootKey}`)}>
                 <ChipIcon color='#7BA65C' height={20} />
                 <p>{rootKey}</p>
               </SideNavItemHeader>

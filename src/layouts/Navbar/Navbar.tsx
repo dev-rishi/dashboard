@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useHistory } from 'react-router'
 import styled from 'styled-components'
+import GlobalSearch from '../../components/GlobalSearch/GlobalSearch'
+import GlobalSearchContext from '../../context/GlobalSearchContext'
 import useLayout, { LAYOUT_FRAMES } from '../../hooks/useLayout'
 import CrossIcon from '../../icons/CrossIcon'
 import MenuIcon from '../../icons/MenuIcon'
@@ -30,6 +32,8 @@ const Logo = styled.p`
 const Navbar = () => {
   const { openLeftFrame, closeLeftFrame, activeFrame } = useLayout()
   const { push } = useHistory()
+  const { onChange } = useContext(GlobalSearchContext).actions
+
   return (
     <NavbarMain>
       {activeFrame === LAYOUT_FRAMES.LEFT ? (
@@ -40,6 +44,7 @@ const Navbar = () => {
       <Logo onClick={() => push(`/`)}>
         ORACLE <span>Cloud</span>
       </Logo>
+      <GlobalSearch handleChange={onChange} />
     </NavbarMain>
   )
 }
