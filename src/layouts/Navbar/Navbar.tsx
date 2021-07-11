@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router'
 import styled from 'styled-components'
 import useLayout, { LAYOUT_FRAMES } from '../../hooks/useLayout'
 import CrossIcon from '../../icons/CrossIcon'
@@ -19,6 +20,7 @@ const Logo = styled.p`
   letter-spacing: 0.1rem;
   font-weight: 500;
   user-select: none;
+  cursor: pointer;
   > span {
     font-size: 18px;
     font-weight: 400;
@@ -27,6 +29,7 @@ const Logo = styled.p`
 
 const Navbar = () => {
   const { openLeftFrame, closeLeftFrame, activeFrame } = useLayout()
+  const { push } = useHistory()
   return (
     <NavbarMain>
       {activeFrame === LAYOUT_FRAMES.LEFT ? (
@@ -34,7 +37,7 @@ const Navbar = () => {
       ) : (
         <MenuIcon height={20} color='#fff' onClick={openLeftFrame} />
       )}
-      <Logo>
+      <Logo onClick={() => push(`/`)}>
         ORACLE <span>Cloud</span>
       </Logo>
     </NavbarMain>

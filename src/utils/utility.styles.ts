@@ -53,8 +53,26 @@ export const GridCol = styled.div`
   overflow: hidden;
   border: 1px solid #a5a5a5;
   background-color: #efefef;
+  cursor: pointer;
   &:hover {
     box-shadow: rgb(0 0 0 / 25%) 0px 2px 5px 1px;
     transition: all 0.2s ease-in;
   }
+`
+
+export const SubText = styled.p`
+  color: #3b3b3c;
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+`
+export const Title = styled.p`
+  color: #316aae;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+`
+export const Subtitle = styled.p`
+  color: #3b3b3c;
+  font-size: 13px;
 `

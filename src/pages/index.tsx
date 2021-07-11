@@ -5,6 +5,7 @@ import Home from './Home/Home'
 
 export interface IRouteParams {
   dashBoardHome: string
+  dashboardCategory?: string
   dashboardName?: string
 }
 
@@ -17,7 +18,7 @@ const Pages = () => {
       <Route exact path='/:dashBoardHome'>
         <Home />
       </Route>
-      <Route path='/:dashBoardHome/:dashboardName'>
+      <Route path='/:dashBoardHome/:dashboardCategory/:dashboardName'>
         <DashboardDetails />
       </Route>
     </Switch>

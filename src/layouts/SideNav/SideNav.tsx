@@ -37,12 +37,12 @@ const SideNav = () => {
                 <ChipIcon color='#7BA65C' height={20} />
                 <p>{rootKey}</p>
               </SideNavItemHeader>
-              {Object.keys(rootData[rootKey]).map((key, keyIdx) => {
-                const dropdownList = Object.keys(rootData[rootKey][key]).map((key) => ({
+              {Object.keys(rootData[rootKey]).map((catKey, keyIdx) => {
+                const dropdownList = Object.keys(rootData[rootKey][catKey]).map((key) => ({
                   label: key,
-                  id: `/${rootKey}/${key}`,
+                  id: `/${rootKey}/${catKey}/${key}`,
                 }))
-                return <Dropdown key={keyIdx} title={key} list={dropdownList} />
+                return <Dropdown key={keyIdx} title={catKey} list={dropdownList} />
               })}
             </Fragment>
           )
